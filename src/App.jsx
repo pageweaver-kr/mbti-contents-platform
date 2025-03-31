@@ -3,7 +3,7 @@ import Main from './page/Main';
 import Test from './page/Test';
 import TestResult from './page/TestResult';
 
-export const base_url = 'http://localhost:5173';
+export const base_url = 'mbti.jadepost.net'; // 구매한 도매인이 있다면 넣어주세요
 
 function App() {
 	return (
