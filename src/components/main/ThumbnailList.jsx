@@ -28,10 +28,7 @@ function ThumbnailList() {
 		<div>
 			{/* 이 이미지를 누르면 해당 테스트 Intro 페이지로 넘어가기 */}
 			{testList?.map((test) => (
-				<Link
-					to={`${base_url}/${test?.info?.mainUrl}`}
-					key={test?.info?.mainUrl}
-				>
+				<Link to={`/${test?.info?.mainUrl}`} key={test?.info?.mainUrl}>
 					<img
 						style={{ width: '100%' }}
 						src={test?.info?.thumbImage}
