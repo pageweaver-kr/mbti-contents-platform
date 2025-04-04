@@ -1,8 +1,10 @@
 import React from 'react';
 import IntroButtonGroup from './IntroButtonGroup';
+import { eventSenderGA } from '../../tools/tools';
 
 function Intro({ info, setMode }) {
 	const onImageClick = () => {
+		eventSenderGA('Paging', 'Test Start Button', 'Intro');
 		setMode('quiz');
 	};
 	return (

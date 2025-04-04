@@ -1,0 +1,19 @@
+.upperButton,
+.bottomButton {
+	width: 40%;
+	height: 3.5rem;
+	margin: 1rem 5%;
+	cursor: pointer;
+	font-size: 1.25rem;
+	font-weight: bold;
+	border-radius: 0.5rem;
+	border: 2px solid brown;
+	background-color: white;
+	color: brown;
+}
+
+.upperButton:hover,
+.bottomButton:hover {
+	background-color: brown;
+	color: white;
+}
