@@ -4,6 +4,7 @@ import Test from './page/Test';
 import TestResult from './page/TestResult';
 import { useEffect } from 'react';
 import ReactGA4 from 'react-ga4';
+import Privacy from './page/Privacy';
 
 export const base_url = 'mbti.jadepost.net'; // 구매한 도매인이 있다면 넣어주세요
 
@@ -30,6 +31,10 @@ function App() {
 					path='/:testParam/result/:resultParam'
 					element={<TestResult />}
 				/>
+				<Route path='/blog/:testParam' element={<Blog />} />
+				{/* mbti.com/blog/personalColor */}
+				{/* Privacy Page */}
+				<Route path='/privacy' element={<Privacy />} />
 			</Routes>
 		</BrowserRouter>
 	);

@@ -6,7 +6,24 @@ import { useNavigate } from 'react-router-dom';
 import styles from './resultButtonGroup.module.css';
 import { eventSenderGA } from '../../tools/tools';
 
-const ResultButtonGroup = ({ testParam, resultParam }) => {
+const ResultButtonGroup = ({ testParam, resultParam, lang }) => {
+	const foreignTextsObject = {
+		Kor: {
+			copyLink: '링크 복사',
+			redo: '다시 하기',
+			goHome: '다른 테스트 하러가기',
+		},
+		Eng: {
+			copyLink: 'Copy the Link',
+			redo: 'Re-DO',
+			goHome: 'Go to Other Tests',
+		},
+		JP: {
+			copyLink: 'Copy the Link',
+			redo: '다시 하기',
+			goHome: '다른 테스트 하러가기',
+		},
+	};
 	const navigate = useNavigate();
 
 	const onClickCopyUrlButton = () => {
@@ -31,18 +48,18 @@ const ResultButtonGroup = ({ testParam, resultParam }) => {
 				>
 					<button className={styles.upperButton} onClick={onClickCopyUrlButton}>
 						<LinkOutlined />
-						&nbsp; 링크복사
+						&nbsp; {lang && foreignTextsObject[lang].copyLink}
 					</button>
 				</CopyToClipboard>
 				<button className={styles.upperButton} onClick={onClickRedoButton}>
 					<RedoOutlined />
-					&nbsp; 다시하기
+					&nbsp; {lang && foreignTextsObject[lang].redo}
 				</button>
 			</div>
 			<div className={styles.bottomDiv}>
 				<button className={styles.bottomButton} onClick={onClickGoHomeButton}>
 					<HomeOutlined />
-					&nbsp; 다른테스트 하러가기
+					&nbsp; {lang && foreignTextsObject[lang].goHome}
 				</button>
 			</div>
 		</div>

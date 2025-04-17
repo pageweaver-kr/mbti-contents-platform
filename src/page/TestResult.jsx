@@ -1,10 +1,11 @@
 import TestResultRenderer from '../components/testResult/TestResultRenderer';
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { TESTS } from '../data/TESTS';
 import ResultButtonGroup from '../components/testResult/ResultButtonGroup';
 import ResultThumbnailList from '../components/testResult/ResultThumbnailList';
 import ShareButtonGroup from '../components/testResult/ShareButtonGroup';
+import GoToHomeButton from '../components/test/GoToHomeButton';
 
 function TestResult() {
 	const navigate = useNavigate();
@@ -30,18 +31,41 @@ function TestResult() {
 	}, [testParam, resultParam, navigate]);
 	return (
 		<div>
-			<TestResultRenderer renderResultInfo={renderResultInfo} />
+			<TestResultRenderer
+				lang={renderTestInfo.info?.lang}
+				renderResultInfo={renderResultInfo}
+			/>
 			<ShareButtonGroup
 				testParam={testParam}
 				resultParam={resultParam}
 				renderTestInfo={renderTestInfo}
+				lang={renderTestInfo.info?.lang}
 			/>
+			<Link to={`/blog/${testParam}`}>
+				<button
+					style={{
+						backgroundColor: 'white',
+						width: '10rem',
+						height: '3rem',
+						fontSize: '1.3rem',
+						color: 'brown',
+						border: '3px solid brown',
+						borderRadius: '1rem',
+						fontWeight: 'bold',
+						cursor: 'pointer',
+					}}
+				>
+					블로그 보러가기
+				</button>
+			</Link>
 			<ResultButtonGroup
 				testParam={testParam}
 				resultParam={resultParam}
 				renderTestInfo={renderTestInfo}
+				lang={renderTestInfo.info?.lang}
 			/>
 			<ResultThumbnailList testParam={testParam} />
+			<GoToHomeButton page='Result' />
 		</div>
 	);
 }
