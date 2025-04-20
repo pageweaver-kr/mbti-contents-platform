@@ -5,6 +5,8 @@ import TestResult from './page/TestResult';
 import { useEffect } from 'react';
 import ReactGA4 from 'react-ga4';
 import Privacy from './page/Privacy';
+import AuthCallback from './page/AuthCallback';
+import MyPage from './page/MyPage';
 
 export const base_url = 'mbti.jadepost.net'; // 구매한 도매인이 있다면 넣어주세요
 
@@ -35,6 +37,9 @@ function App() {
 				{/* mbti.com/blog/personalColor */}
 				{/* Privacy Page */}
 				<Route path='/privacy' element={<Privacy />} />
+				<Route path='/signup' element={<SignUp />} />
+				<Route path='/authcallback' element={<AuthCallback />} />
+				<Route path='/mypage' element={<MyPage />} />
 			</Routes>
 		</BrowserRouter>
 	);

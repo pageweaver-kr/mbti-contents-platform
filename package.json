@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@prerenderer/renderer-puppeteer": "^1.2.4",
 		"@prerenderer/rollup-plugin": "^0.3.12",
+		"@supabase/supabase-js": "github:supabase/supabase-js",
 		"antd": "^5.24.4",
 		"js-cookie": "^3.0.5",
 		"puppeteer": "^24.6.1",
